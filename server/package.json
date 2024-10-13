@@ -1,0 +1,22 @@
+{
+  "name": "image-manipulation",
+  "version": "1.0.0",
+  "description": "A Web App to format images, resize, color manipulation and many more... ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+  },
+  "keywords": [
+    "image",
+    "format",
+    "resize",
+    "color",
+    "correction"
+  ],
+  "author": "Rabi anando sarkar",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
