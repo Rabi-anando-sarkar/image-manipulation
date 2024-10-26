@@ -1,6 +1,9 @@
 import multer from 'multer'
 
 const storage = multer.diskStorage({
+
+    // destination where the images will upload in the server
+
     destination: function(req,file,cb) {
         cb(null, 'uploads/') // Directory where the file gets saved
     },
