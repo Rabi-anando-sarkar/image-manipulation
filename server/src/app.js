@@ -17,6 +17,6 @@ app.use(express.static('public'))
 
 import imageRouter from './routes/images.routes.js'
 
-app.use('/api/v1/imagesUpload', imageRouter)
+app.use('/api/v1/images', imageRouter)
 
 export { app }

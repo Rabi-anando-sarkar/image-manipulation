@@ -1,35 +1,20 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model } from "mongoose";
 
-const imageSchema = new Schema({
-    imageUrl: {
-        type: String,
-        required: true
-    },
-    format: {
-        type: String,
-        enum: ['jpg','png','gif','avif','webp'],
-        required: true
-    },
-    watermarkRemoved: {
-        type: Boolean,
-        default: false
-    },
-    watermarkRequested: {
-        type: Boolean,
-        default: false,
-    },
-    conversionDetails: {
-        converted: {
-            type: Boolean,
-            default: false
-        },
-        formatConvertedTo: {
+const imageSchema = new Schema(
+    {
+        imageUrl: {
             type: String,
-            enum: ['jpg','png','gif','avif','webp']
-        }
+            required: true,
+        },
+        format: {
+            type: String,
+            enum: ["jpg", "png", "gif", "avif", "webp"],
+            required: true,
+        },
+    },
+    {
+        timestamps: true,
     }
-},{
-    timestamps: true
-})
+);
 
-export const Image = model("Image", imageSchema)
+export const Image = model("Image", imageSchema);

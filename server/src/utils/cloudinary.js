@@ -10,11 +10,13 @@ cloudinary.config({
 const uploadOnCloudinary = async (localFilePath) => {
     try {
         if(!localFilePath) return null
+
+        const uniquePublicId = Math.floor(Math.random() * 999999)
         
         // upload file on cloudinary with presets
         const response = await cloudinary.uploader.upload(localFilePath,{
             resource_type: 'auto',
-            public_id: 'image_uploaded',
+            public_id: uniquePublicId,
             folder: 'to_be_converted',
             allowed_formats: ['jpg','png','webp','tiff','gif','avif']
         })

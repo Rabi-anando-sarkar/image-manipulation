@@ -11,14 +11,14 @@ const storage = multer.diskStorage({
         
         // Generating a unique name for the uploaded file
         const currentDate = new Date().toISOString().split('T')[0];
-        const randomSixDigit = Math.floor(100000 + Math.random() * 900000);
+        const randomSixDigit = Array.from({length: 19}, () => Math.floor(Math.random() * 10)).join('').padStart(20, Math.floor(Math.random() * 9) + 1);
         const uniqueSuffix = currentDate + '-' + randomSixDigit; 
 
         // Using the file extension
         const fileExtension = file.originalname.split('.').pop();
 
         // Save with unique name
-        cb(null, file.fieldname + '-' + uniqueSuffix + '.' + fileExtension); 
+        cb(null,uniqueSuffix + '.' + fileExtension); 
     }
 })
 

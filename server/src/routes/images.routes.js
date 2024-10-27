@@ -1,9 +1,15 @@
 import { Router } from "express";
-import { imageUpload } from "../controllers/imagesUpload.controller.js";
-import upload from "../utils/index.js";
+import { changeImageFormat } from "../controllers/imagesUpload.controller.js";
+import upload  from '../middlewares/multer.middleware.js'
 
 const router = Router()
 
-router.route('/image-upload').post(upload.single('image') ,imageUpload)
+router.route('/image-upload').post(
+    upload.fields([
+        {
+            name: 'image',
+            maxCount: 1
+        }
+    ]),changeImageFormat)
 
 export default router
