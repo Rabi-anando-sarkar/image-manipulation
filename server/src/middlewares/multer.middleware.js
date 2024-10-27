@@ -5,7 +5,7 @@ const storage = multer.diskStorage({
     // destination where the images will upload in the server
 
     destination: function(req,file,cb) {
-        cb(null, 'uploads/') // Directory where the file gets saved
+        cb(null, './public/temp') // Directory where the file gets saved
     },
     filename: function (req, file, cb) {
         
@@ -21,6 +21,9 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + uniqueSuffix + '.' + fileExtension); 
     }
 })
+
+
+// export const upload = multer({ storage })
 
 const upload = multer({
     storage: storage

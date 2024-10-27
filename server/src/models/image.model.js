@@ -19,7 +19,7 @@ const imageSchema = new Schema({
         default: false,
     },
     conversionDetails: {
-        coverted: {
+        converted: {
             type: Boolean,
             default: false
         },
@@ -30,7 +30,6 @@ const imageSchema = new Schema({
     }
 },{
     timestamps: true
-}
-)
+})
 
 export const Image = model("Image", imageSchema)
