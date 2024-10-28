@@ -21,6 +21,7 @@ const uploadOnCloudinary = async (localFilePath) => {
             allowed_formats: ['jpg','png','webp','tiff','gif','avif']
         })
         console.log(`::: File is Uploaded in Cloudinary :::`);
+        fs.unlinkSync(localFilePath)
         return response;
         
     } catch (error) {
